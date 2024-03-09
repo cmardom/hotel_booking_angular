@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
+import {Subject} from "rxjs";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,14 +19,12 @@ export class RoomService {
 
   }
 
-  /*login(obj:any){
-    return this.http.post(this.apiEndPoint + 'Login', obj);
-  }*/
-
   getUsuarios(){
     console.log(this.http.get(USUARIOSURL))
     return this.http.get(USUARIOSURL);
   }
+    //para recuperar el nombre de usuario en el navbar de layout
+
 }
 
 export interface Usuario {

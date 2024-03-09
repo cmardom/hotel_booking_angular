@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Output} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {RoomService, Usuario} from "../../services/room.service";
 import {Router, RouterOutlet} from "@angular/router";
@@ -14,8 +14,8 @@ import {tap} from "rxjs";
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  usuarios: Usuario[]=[];
-  loginObj: any = {
+  @Output()usuarios: Usuario[]=[];
+  @Output()loginObj: any = {
     "id": '',
     "name": "",
     "booking": [],
@@ -31,20 +31,6 @@ export class LoginComponent {
       this.usuarios= (data as any));
   }
 
-/*  onLogin() {
-    this.roomServ.getUsuarios().subscribe((res:any)=>{
-        if(res) {
-
-          localStorage.setItem('hotelUser',JSON.stringify(res.data));
-          this.router.navigateByUrl('localhost:4200/dashboard' )
-        } else {
-          alert('Check User Credentials')
-        }
-      },
-      error=> {
-
-      })
-  }*/
 
   onLogin(){
     this.roomServ.getUsuarios().subscribe({
@@ -52,6 +38,10 @@ export class LoginComponent {
         this.usuarios = (data as Usuario[])
         for (const usuario of this.usuarios) {
           if (usuario.name === this.loginObj.name && usuario.passwd === this.loginObj.passwd){
+            this.loginObj.id = usuario.id;
+            this.loginObj.name = usuario.name;
+            this.loginObj.booking = usuario.booking;
+            this.loginObj.passwd = usuario.passwd;
             alert('succesful login')
             this.router.navigateByUrl('/layout')
           }
