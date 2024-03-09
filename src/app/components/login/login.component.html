@@ -28,7 +28,7 @@
 
     <div class="input-box">
 
-      <input type="text" placeholder="Username" required>
+      <input [(ngModel)]="loginObj.name" name="name" type="text" placeholder="Username" required>
 
 
 
@@ -36,7 +36,7 @@
 
     <div class="input-box">
 
-      <input type="password" placeholder="Password" required>
+      <input [(ngModel)]="loginObj.passwd" name="passwd" type="password" placeholder="Password" required>
 
 
 
@@ -50,7 +50,7 @@
 
     </div>
 
-    <button type="submit" class="btn">Login</button>
+    <button (click)="onLogin()" type="submit" class="btn">Login</button>
 
     <div class="link">
 
@@ -97,7 +97,7 @@
 
     </div>
 
-    <button (click)="onLogin()" type="submit" class="btn">Register</button>
+    <button type="submit" class="btn">Register</button>
 
     <div class="link">
 
