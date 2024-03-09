@@ -1,0 +1,24 @@
+{
+  "productos": [
+    {
+      "id": 8,
+      "nombre": "Regla",
+      "precio": 5,
+      "categoria": 3,
+      "inventario": 50
+    },
+    {
+      "id": 99,
+      "nombre": "ejemplo",
+      "precio": 88.88,
+      "categoria": 1
+    }
+  ],
+  "categorias": [
+    {
+      "id": 3,
+      "nombre": "Papelería"
+    }
+
+ ]
+}

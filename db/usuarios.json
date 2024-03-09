@@ -1,0 +1,33 @@
+{"usuarios": [
+  {
+  "id": 1,
+  "name": "Laura",
+  "booking": [],
+  "passwd": "passwd"
+  },
+  {
+  "id": 2,
+  "name": "Carlos",
+  "booking": [],
+  "passwd": "passwd"
+  },
+  {
+  "id": 3,
+  "name": "Juan",
+  "booking": [],
+  "passwd": "passwd"
+  },
+  {
+  "id": 4,
+  "name": "Jose",
+  "booking": [],
+  "passwd": "passwd"
+  },
+  {
+  "id": 5,
+  "name": "Miguel",
+  "resultado": [],
+  "booking": "passwd"
+  }]
+}
+
